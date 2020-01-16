@@ -7,12 +7,14 @@ import { Button } from '@material-ui/core';
 import { SearchInput } from 'components';
 
 const useStyles = makeStyles(theme => ({
-  root: {},
+  root: {
+    paddingBottom: theme.spacing(1)
+  },
   row: {
     height: '42px',
     display: 'flex',
     alignItems: 'center',
-    marginTop: theme.spacing(1)
+    marginTop: theme.spacing(1),
   },
   spacer: {
     flexGrow: 1
@@ -39,6 +41,12 @@ const UsersToolbar = props => {
       className={clsx(classes.root, className)}
     >
       <div className={classes.row}>
+      {/* <div className={classes.row}> */}
+        <SearchInput
+          className={classes.searchInput}
+          placeholder="Mitarbeiter suchen..."
+        />
+      {/* </div> */}
         <span className={classes.spacer} />
         <Button className={classes.importButton}>Import</Button>
         <Button className={classes.exportButton}>Export</Button>
@@ -49,12 +57,12 @@ const UsersToolbar = props => {
           Add user
         </Button>
       </div>
-      <div className={classes.row}>
+      {/* <div className={classes.row}>
         <SearchInput
           className={classes.searchInput}
           placeholder="Search user"
         />
-      </div>
+      </div> */}
     </div>
   );
 };

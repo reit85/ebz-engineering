@@ -29,6 +29,9 @@ const useStyles = makeStyles(theme => ({
   progress: {
     marginTop: theme.spacing(2)
   },
+  role: {
+    fontWeight: 'Bold'
+  },
   uploadButton: {
     marginRight: theme.spacing(2)
   }
@@ -40,11 +43,12 @@ const AccountProfile = props => {
   const classes = useStyles();
 
   const user = {
-    name: 'Shen Zhi',
-    city: 'Los Angeles',
-    country: 'USA',
-    timezone: 'GTM-7',
-    avatar: '/images/avatars/avatar_11.png'
+    name: 'Alexander Reit',
+    role: 'Planung und Kalkulation',
+    city: 'Ravensburg',
+    country: 'Germany',
+    timezone: 'GMT+2',
+    avatar: '/images/avatars/ar.jpg'
   };
 
   return (
@@ -59,7 +63,14 @@ const AccountProfile = props => {
               gutterBottom
               variant="h2"
             >
-              John Doe
+              {user.name}
+            </Typography>
+            <Typography
+              className={{...classes.locationText, ...classes.role}}
+              color="textSecondary"
+              variant="body1"
+            >
+              {user.role}
             </Typography>
             <Typography
               className={classes.locationText}
@@ -73,7 +84,7 @@ const AccountProfile = props => {
               color="textSecondary"
               variant="body1"
             >
-              {moment().format('hh:mm A')} ({user.timezone})
+              {moment().format('HH:mm')} ({user.timezone})
             </Typography>
           </div>
           <Avatar

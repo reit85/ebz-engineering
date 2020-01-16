@@ -8,6 +8,7 @@ import {
   Dashboard as DashboardView,
   ProductList as ProductListView,
   UserList as UserListView,
+  CustomerList as CustomerListView,
   Typography as TypographyView,
   Icons as IconsView,
   Account as AccountView,
@@ -42,6 +43,12 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/products"
+      />
+      <RouteWithLayout
+        component={CustomerListView}
+        exact
+        layout={MainLayout}
+        path="/customers"
       />
       <RouteWithLayout
         component={TypographyView}

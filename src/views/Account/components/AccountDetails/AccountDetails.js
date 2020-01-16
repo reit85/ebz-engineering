@@ -23,12 +23,12 @@ const AccountDetails = props => {
   const classes = useStyles();
 
   const [values, setValues] = useState({
-    firstName: 'Shen',
-    lastName: 'Zhi',
-    email: 'shen.zhi@devias.io',
-    phone: '',
-    state: 'Alabama',
-    country: 'USA'
+    firstName: 'Alexander',
+    lastName: 'Reit',
+    email: 'Alexander.Reit@ebz-group.com',
+    phone: '+49 (0)751 886 - 1862',
+    state: 'Ravensburg',
+    country: 'Deutschland'
   });
 
   const handleChange = event => {
@@ -39,6 +39,10 @@ const AccountDetails = props => {
   };
 
   const states = [
+    {
+      value: 'ravensburg',
+      label: 'Ravensburg'
+    },
     {
       value: 'alabama',
       label: 'Alabama'
@@ -144,7 +148,7 @@ const AccountDetails = props => {
             >
               <TextField
                 fullWidth
-                label="Select State"
+                label="Stadt auswählen"
                 margin="dense"
                 name="state"
                 onChange={handleChange}

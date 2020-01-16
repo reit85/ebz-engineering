@@ -3,7 +3,8 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { Card, CardContent, Grid, Typography, Avatar } from '@material-ui/core';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+
+import DateRangeIcon from '@material-ui/icons/DateRange';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,7 +17,8 @@ const useStyles = makeStyles(theme => ({
     display: 'flex'
   },
   title: {
-    fontWeight: 700
+    fontWeight: 700,
+    fontSize: '1em'
   },
   avatar: {
     backgroundColor: theme.palette.white,
@@ -25,8 +27,8 @@ const useStyles = makeStyles(theme => ({
     width: 56
   },
   icon: {
-    height: 32,
-    width: 32
+    height: 36,
+    width: 36
   }
 }));
 
@@ -52,18 +54,18 @@ const TotalProfit = props => {
               gutterBottom
               variant="body2"
             >
-              TOTAL PROFIT
+              ANGEBOTSABGABEN DIESE WOCHE
             </Typography>
             <Typography
               color="inherit"
               variant="h3"
             >
-              $23,200
+              3 Angebote
             </Typography>
           </Grid>
           <Grid item>
             <Avatar className={classes.avatar}>
-              <AttachMoneyIcon className={classes.icon} />
+              <DateRangeIcon className={classes.icon} />
             </Avatar>
           </Grid>
         </Grid>

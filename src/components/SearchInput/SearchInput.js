@@ -19,8 +19,8 @@ const useStyles = makeStyles(theme => ({
   },
   input: {
     flexGrow: 1,
-    fontSize: '14px',
-    lineHeight: '16px',
+    fontSize: '16px',
+    lineHeight: '18px',
     letterSpacing: '-0.05px'
   }
 }));

@@ -1,7 +1,7 @@
 {
-  "name": "react-material-dashboard",
-  "author": "DeviasIO",
-  "email": "contact@devias.io",
+  "name": "ebz-engineering",
+  "author": "Alexander Reit",
+  "email": "alexander.reit@ebz-group.com",
   "licence": "MIT",
   "version": "0.3.0",
   "private": false,
@@ -21,22 +21,25 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ]
   },
   "dependencies": {
     "@material-ui/core": "^4.2.1",
     "@material-ui/icons": "^4.2.1",
     "@material-ui/styles": "^4.2.1",
+    "babel-polyfill": "^6.26.0",
     "chart.js": "^2.8.0",
     "clsx": "^1.0.4",
+    "eslint": "^6.8.0",
     "history": "^4.9.0",
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-app-polyfill": "^1.0.5",
     "react-chartjs-2": "^2.7.6",
     "react-dom": "^16.8.6",
     "react-perfect-scrollbar": "^1.5.3",
@@ -48,7 +51,6 @@
     "validate.js": "^0.13.1"
   },
   "devDependencies": {
-    "eslint": "5.16.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "prettier": "^1.17.1",
