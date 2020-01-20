@@ -30,45 +30,26 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const UsersToolbar = props => {
+const CustomersToolbar = props => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
 
   return (
-    <div
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
+    <div {...rest} className={clsx(classes.root, className)}>
       <div className={classes.row}>
-      {/* <div className={classes.row}> */}
-        <SearchInput
-          className={classes.searchInput}
-          placeholder="Suchen..."
-        />
-      {/* </div> */}
+        <SearchInput className={classes.searchInput} placeholder="Suchen..." />
         <span className={classes.spacer} />
-        <Button className={classes.importButton}>Import</Button>
-        <Button className={classes.exportButton}>Export</Button>
-        <Button
-          color="primary"
-          variant="contained"
-        >
-          Add customer
-        </Button>
+        {/* <Button className={classes.importButton}>Import</Button>
+        <Button className={classes.exportButton}>Export</Button> */}
+        <Button color="primary" variant="contained"> Add customer</Button>
       </div>
-      {/* <div className={classes.row}>
-        <SearchInput
-          className={classes.searchInput}
-          placeholder="Search user"
-        />
-      </div> */}
     </div>
   );
 };
 
-UsersToolbar.propTypes = {
+CustomersToolbar.propTypes = {
   className: PropTypes.string
 };
 
-export default UsersToolbar;
+export default CustomersToolbar;

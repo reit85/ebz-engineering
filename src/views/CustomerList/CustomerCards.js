@@ -4,7 +4,7 @@ import { IconButton, Grid, Typography } from '@material-ui/core';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
-import { ProductsToolbar, ProductCard } from './components';
+import { CustomersToolbar, CustomerCard } from './components';
 import mockData from './data';
 
 const useStyles = makeStyles(theme => ({
@@ -22,19 +22,19 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const ProductList = () => {
+const CustomerCards = () => {
   const classes = useStyles();
 
-  const [products] = useState(mockData);
+  const [customers] = useState(mockData);
 
   return (
     <div className={classes.root}>
-      <ProductsToolbar />
+      <CustomersToolbar />
       <div className={classes.content}>
         <Grid container spacing={3}>
-          {products.map(product => (
-            <Grid item key={product.id} lg={4} md={6} xs={12}>
-              <ProductCard product={product} />
+          {customers.map(customer => (
+            <Grid item key={customer.id} lg={2} md={2} xs={4}>
+              <CustomerCard customer={customer} />
             </Grid>
           ))}
         </Grid>
@@ -52,4 +52,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default CustomerCards;
