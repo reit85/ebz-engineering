@@ -9,15 +9,15 @@ class Scheduler extends Component {
         super(props);
 
         this.state = {
-            startDate: moment().subtract(7, 'days').toISOString(),
-            days: 70,
+            startDate: moment().subtract(30, 'days').toISOString(),
+            days: 120,
             scale: "Day",
             timeHeaders: [
                 { groupBy: "Month"},
                 { groupBy: "Day", format: "d"}
             ],
-            cellWidthSpec: "Auto",
-            cellWidth: 50,
+            cellWidthSpec: "Fixed",
+            cellWidth: 30,
             resources: [
                 {name: "Resource A", id: "A"},
                 {name: "Resource B", id: "B"},
