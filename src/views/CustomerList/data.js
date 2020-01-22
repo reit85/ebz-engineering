@@ -3,6 +3,13 @@ import uuid from 'uuid/v1';
 export default [
   {
     id: uuid(),
+    name: 'Audi',
+    amountProjects: 1,
+    pprvPath: 'Pfad zu PPRV Ordner',
+    avatarUrl: '/images/avatars/audi.jpg'
+  },
+  {
+    id: uuid(),
     name: 'BMW',
     amountProjects: 1,
     pprvPath: 'Pfad zu PPRV Ordner',
@@ -17,6 +24,34 @@ export default [
   },
   {
     id: uuid(),
+    name: 'Jaguar - Land Rover',
+    amountProjects: 1,
+    pprvPath: 'Pfad zu PPRV Ordner',
+    avatarUrl: '/images/avatars/jlr.jpg'
+  },
+  {
+    id: uuid(),
+    name: 'Magna',
+    amountProjects: 1,
+    pprvPath: 'Pfad zu PPRV Ordner',
+    avatarUrl: '/images/avatars/magna.jpg'
+  },
+  {
+    id: uuid(),
+    name: 'Magnetto',
+    amountProjects: 1,
+    pprvPath: 'Pfad zu PPRV Ordner',
+    avatarUrl: '/images/avatars/magnetto.png'
+  },
+  {
+    id: uuid(),
+    name: 'Scania',
+    amountProjects: 1,
+    pprvPath: 'Pfad zu PPRV Ordner',
+    avatarUrl: '/images/avatars/scania.jpg'
+  },
+  {
+    id: uuid(),
     name: 'Tesla',
     amountProjects: 1,
     pprvPath: 'Pfad zu PPRV Ordner',
@@ -24,31 +59,24 @@ export default [
   },
   {
     id: uuid(),
-    name: 'Wagon',
+    name: 'Voestalpine',
     amountProjects: 3,
     pprvPath: 'Pfad zu PPRV Ordner',
-    avatarUrl: '/images/avatars/wagon.png'
+    avatarUrl: '/images/avatars/voestalpine.jpg'
   },
   {
     id: uuid(),
-    name: 'BMW',
-    amountProjects: 1,
+    name: 'VinFast',
+    amountProjects: 3,
     pprvPath: 'Pfad zu PPRV Ordner',
-    avatarUrl: '/images/avatars/bmw.png'
+    avatarUrl: '/images/avatars/vinfast.jpg'
   },
   {
     id: uuid(),
-    name: 'Daimler',
-    amountProjects: 14,
+    name: 'Volkswagen',
+    amountProjects: 3,
     pprvPath: 'Pfad zu PPRV Ordner',
-    avatarUrl: '/images/avatars/daimler.jpg'
-  },
-  {
-    id: uuid(),
-    name: 'Tesla',
-    amountProjects: 1,
-    pprvPath: 'Pfad zu PPRV Ordner',
-    avatarUrl: '/images/avatars/tesla.png'
+    avatarUrl: '/images/avatars/vw.png'
   },
   {
     id: uuid(),

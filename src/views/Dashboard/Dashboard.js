@@ -10,7 +10,8 @@ import {
   LatestProducts,
   LatestOrders,
   ProjekteBearbeitung,
-  AnfragenMonat
+  AnfragenMonat,
+  Scheduler
 } from './components';
 
 const useStyles = makeStyles(theme => ({
@@ -40,10 +41,11 @@ const Dashboard = () => {
         <Grid item lg={3} sm={6} xl={3} xs={12}>
           <TotalProfit />
         </Grid>
-        <Grid item lg={8} sm={12} xl={9} xs={12}>
-          <LatestSales />
+        <Grid item lg={12} sm={12} xl={12} xs={12}>
+          {/* <LatestSales /> */}
+          <Scheduler />
         </Grid>
-        <Grid item lg={4} sm={6} xl={3} xs={12}>
+        {/* <Grid item lg={4} sm={6} xl={3} xs={12}>
           <UsersByDevice />
         </Grid>
         <Grid item lg={8} sm={12} xl={9} xs={12}>
@@ -51,7 +53,7 @@ const Dashboard = () => {
         </Grid>
         <Grid item lg={4} sm={6} xl={3} xs={12}>
           <LatestProducts />
-        </Grid>
+        </Grid> */}
         
       </Grid>
     </div>

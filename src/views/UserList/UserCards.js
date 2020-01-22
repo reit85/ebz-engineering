@@ -4,7 +4,7 @@ import { IconButton, Grid, Typography } from '@material-ui/core';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
-import { CustomersToolbar, CustomerCard } from './components';
+import { UsersToolbar, UserCard } from './components';
 import mockData from './data';
 
 const useStyles = makeStyles(theme => ({
@@ -22,23 +22,26 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const CustomerCards = () => {
+const UserCards = () => {
   const classes = useStyles();
 
-  const [customers] = useState(mockData);
+  const [users] = useState(mockData);
+  // const [view, setView] = useState(); //TODO: Umschalten der Adsicheten realisieren List/Card
 
   return (
     <div className={classes.root}>
-      <CustomersToolbar />
+      <UsersToolbar />
+
       <div className={classes.content}>
         <Grid container spacing={3}>
-          {customers.map(customer => (
-            <Grid item key={customer.id} lg={2} md={3} xs={6}>
-              <CustomerCard customer={customer} />
+          {users.map(user => (
+            <Grid item key={user.id} lg={2} md={3} xs={6}>
+              <UserCard user={user} />
             </Grid>
           ))}
         </Grid>
       </div>
+      
       <div className={classes.pagination}>
         <Typography variant="caption">1-10 von 20</Typography>
         <IconButton>
@@ -52,4 +55,4 @@ const CustomerCards = () => {
   );
 };
 
-export default CustomerCards;
+export default UserCards;

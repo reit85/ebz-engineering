@@ -27,6 +27,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+
 const CustomerCard = props => {
   const { className, customer, ...rest } = props;
 
@@ -37,7 +38,7 @@ const CustomerCard = props => {
         <CardHeader 
             className={classes.cardHeader}
             title={customer.name}
-            subheader={customer.amountProjects + ' Projekte'}  //TODO: correct coditional rendering
+            subheader={`${customer.amountProjects} ${customer.amountProjects === 1 ? 'Anfrage' : 'Anfragen'}`}
         />
         
         <CardContent>
@@ -50,8 +51,7 @@ const CustomerCard = props => {
 };
 
 CustomerCard.propTypes = {
-  className: PropTypes.string,
-  product: PropTypes.object.isRequired
+    className: PropTypes.string
 };
 
 export default CustomerCard;

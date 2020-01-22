@@ -42,7 +42,7 @@ const CustomersToolbar = props => {
         <span className={classes.spacer} />
         {/* <Button className={classes.importButton}>Import</Button>
         <Button className={classes.exportButton}>Export</Button> */}
-        <Button color="primary" variant="contained"> Add customer</Button>
+        <Button color="primary" variant="contained">KUNDE HINZUFÜGEN</Button>
       </div>
     </div>
   );

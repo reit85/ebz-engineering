@@ -46,26 +46,19 @@ const useStyles = makeStyles(theme => ({
 
 const Bearbeitung = props => {
   const { className, ...rest } = props;
-
   const classes = useStyles();
 
   return (
-    <Card
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
+    <Card {...rest} className={clsx(classes.root, className)}>
       <CardContent>
         <Grid container justify="space-between">
           <Grid item>
-            <Typography
-              className={classes.title}
-              color="textSecondary"
-              gutterBottom
-              variant="body2"
-            >
-              PROJEKTE IN BEARBEITUNG
+            <Typography className={classes.title} color="textSecondary" gutterBottom variant="body2">
+              ANGEBOTE IN BEARBEITUNG
             </Typography>
-            <Typography variant="h3" className={classes.number}>6 Projekte</Typography>
+            <Typography variant="h3" className={classes.number}>
+              6 Angebote
+            </Typography>
           </Grid>
           <Grid item>
             <Avatar className={classes.avatar}>
@@ -73,21 +66,6 @@ const Bearbeitung = props => {
             </Avatar>
           </Grid>
         </Grid>
-        {/* <div className={classes.difference}>
-          <ArrowDownwardIcon className={classes.differenceIcon} />
-          <Typography
-            className={classes.differenceValue}
-            variant="body2"
-          >
-            12%
-          </Typography>
-          <Typography
-            className={classes.caption}
-            variant="caption"
-          >
-            Since last month
-          </Typography>
-        </div> */}
       </CardContent>
     </Card>
   );

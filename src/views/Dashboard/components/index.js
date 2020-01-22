@@ -10,3 +10,5 @@ export { default as UsersByDevice } from './UsersByDevice';
 export { default as ProjekteBearbeitung } from './ProjekteBearbeitung';
 export { default as AnzahlMitarbeiter } from './AnzahlMitarbeiter';
 export { default as AnfragenMonat } from './AnfragenMonat';
+
+export { default as Scheduler } from './Scheduler';
