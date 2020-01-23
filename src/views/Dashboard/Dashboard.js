@@ -5,10 +5,10 @@ import { Grid } from '@material-ui/core';
 import {
   AnzahlMitarbeiter,
   TotalProfit,
-  LatestSales,
-  UsersByDevice,
-  LatestProducts,
-  LatestOrders,
+  // LatestSales,
+  // UsersByDevice,
+  // LatestProducts,
+  // LatestOrders,
   ProjekteBearbeitung,
   AnfragenMonat,
   Scheduler

@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import {DayPilot, DayPilotScheduler} from "daypilot-pro-react";
-import Zoom from "./Zoom";
+import {SchedulerRow} from './SchedulerRow';
+// import Zoom from "./Zoom";
+import { Card, CardContent } from '@material-ui/core'
 import moment from 'moment'
+import uuid from 'uuid'
 
 class Scheduler extends Component {
 
@@ -9,70 +12,111 @@ class Scheduler extends Component {
         super(props);
 
         this.state = {
-            startDate: moment().subtract(30, 'days').toISOString(),
+            startDate: moment().subtract(15, 'days').toISOString(),
+            height: 700,
             days: 120,
             scale: "Day",
+            cellWidthSpec: "Fixed",
+            cellWidth: 25,
+            rowMarginTop: 10,
+            rowMarginBottom: 10,
+            position: "EventBottom",
+            eventHeight: 45,
+            onBeforeRowHeaderRender: function(args) {
+                args.row.areas = [
+                  {
+                    right: 3,
+                    top: 3,
+                    height: 12,
+                    width: 12,
+                    icon: "icon-info",
+                    style: "cursor: pointer",
+                    onClick: function(args) {
+                      var row = args.source;
+                      DayPilot.Modal.alert(row.name);
+                    }
+                  }
+                ]
+              },
+              onBeforeRowHeaderDomAdd: function(args) {
+                args.target = "Cell";
+                args.element = <SchedulerRow row={args.row} />;
+              },
+              onBeforeTimeHeaderRender: args => {
+                if (args.header.level === 1 && args.header.start === DayPilot.Date.today()) {
+                  args.header.backColor = "#cc0000";
+                  args.header.fontColor = "#ffffff";
+                  args.header.cssClass = "today";
+                }
+              },
             timeHeaders: [
                 { groupBy: "Month"},
                 { groupBy: "Day", format: "d"}
             ],
-            cellWidthSpec: "Fixed",
-            cellWidth: 30,
             resources: [
-                {name: "Resource A", id: "A"},
-                {name: "Resource B", id: "B"},
-                {name: "Resource C", id: "C"},
-                {name: "Resource D", id: "D"},
-                {name: "Resource E", id: "E"},
-                {name: "Resource F", id: "F"},
-                {name: "Resource G", id: "G"}
+                {id: "A", name: "Wagon Überarbeitung"},
+                {id: "B", name: "Audi Batteriemontage"},
+                {id: "C", name: "Daimler PB 340"},
+                {id: "D", name: "Tesla MY"},
+                {id: uuid(), name: ""},
+                {id: uuid(), name: ""},
+                {id: uuid(), name: ""},
+                {id: uuid(), name: ""},
+                {id: uuid(), name: ""},
+                {id: uuid(), name: ""},
+                {id: uuid(), name: ""},
+                {id: uuid(), name: ""},
+                {id: uuid(), name: ""},
+                {id: uuid(), name: ""},
             ],
             events: [
-                {id: 1, text: "Event 1", start: "2019-10-02T00:00:00", end: "2019-10-05T00:00:00", resource: "A" },
-                {id: 2, text: "Event 2", start: "2019-10-03T00:00:00", end: "2019-10-10T00:00:00", resource: "C", barColor: "#38761d", barBackColor: "#93c47d" },
-                {id: 3, text: "Event 3", start: "2019-10-02T00:00:00", end: "2019-10-08T00:00:00", resource: "D", barColor: "#f1c232", barBackColor: "#f1c232" },
-                {id: 4, text: "Event 3", start: "2019-10-02T00:00:00", end: "2019-10-08T00:00:00", resource: "E", barColor: "#cc0000", barBackColor: "#ea9999" }
+                {id: 1, resource: "A", text: "Runde 3", barColor: "#1593D7", barBackColor: "#1593D7", start: moment().subtract(6, 'days').toISOString(), end: moment().add(12, 'days').toISOString(), bubbleHtml: "Static 'Event 1' details specified using event <b>data object</b>." },
+                {id: 2, resource: "B", text: "Runde 2", barColor: "#1593D7", barBackColor: "#1593D7", start: moment().subtract(3, 'days').toISOString(), end: moment().add(18, 'days').toISOString() },
+                {id: 3, resource: "C", text: "Runde 2", barColor: "#1593D7", barBackColor: "#1593D7", start: moment().subtract(2, 'days').toISOString(), end: moment().add(20, 'days').toISOString() },
+                {id: 4, resource: "D", text: "Runde 1", barColor: "#1593D7", barBackColor: "#1593D7", start: moment().subtract(1, 'days').toISOString(), end: moment().add(8, 'days').toISOString() },
+                {id: 5, resource: "A", text: "Runde 4", barColor: "#1593D7", barBackColor: "#1593D7", start: moment().add(20, 'days').toISOString(), end: moment().add(34, 'days').toISOString() }
             ]
         };
     }
 
-    zoomChange(args) {
-        switch (args.level) {
-            case "month":
-                this.setState({
-                    startDate: DayPilot.Date.today().firstDayOfMonth(),
-                    days: DayPilot.Date.today().daysInMonth(),
-                    scale: "Day"
-                });
-                break;
-            case "week":
-                this.setState({
-                    startDate: DayPilot.Date.today().firstDayOfWeek(),
-                    days: 7,
-                    scale: "Day"
-                });
-                break;
-            default:
-                throw new Error("Invalid zoom level");
-        }
-    }
+    // zoomChange(args) {
+    //     switch (args.level) {
+    //         case "month":
+    //             this.setState({
+    //                 startDate: DayPilot.Date.today().firstDayOfMonth(),
+    //                 days: DayPilot.Date.today().daysInMonth(),
+    //                 scale: "Day"
+    //             });
+    //             break;
+    //         case "week":
+    //             this.setState({
+    //                 startDate: DayPilot.Date.today().firstDayOfWeek(),
+    //                 days: 7,
+    //                 scale: "Day"
+    //             });
+    //             break;
+    //         default:
+    //             throw new Error("Invalid zoom level");
+    //     }
+    // }
 
-    cellWidthChange(ev) {
-        var checked = ev.target.checked;
-        this.setState({
-            cellWidthSpec: checked ? "Auto" : "Fixed"
-        });
-    }
+    // cellWidthChange(ev) {
+    //     var checked = ev.target.checked;
+    //     this.setState({
+    //         cellWidthSpec: checked ? "Auto" : "Fixed"
+    //     });
+    // }
 
     render() {
         var {...config} = this.state;
-        return (
-            <div>
 
-                <div className="toolbar">
+        return (
+            <Card>
+                <CardContent>
+                {/* <div className="toolbar">
                     <Zoom onChange={args => this.zoomChange(args)} />
                     <span className="toolbar-item"><label><input type="checkbox" checked={this.state.cellWidthSpec === "Auto"} onChange={ev => this.cellWidthChange(ev)} /> Auto width</label></span>
-                </div>
+                </div> */}
 
                 <DayPilotScheduler
                   {...config}
@@ -101,7 +145,8 @@ class Scheduler extends Component {
                   }}
                   ref={component => { this.scheduler = component && component.control; }}
                 />
-            </div>
+                </CardContent>
+            </Card>
         );
     }
 }
