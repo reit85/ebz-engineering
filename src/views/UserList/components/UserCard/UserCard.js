@@ -55,7 +55,6 @@ const UserCard = props => {
         <CardHeader
           className={classes.cardHeader}
           avatar={<Avatar className={classes.large} alt={user.name} src={user.avatarUrl} />}
-          
         />
         <CardHeader 
           className={classes.cardHeader}
