@@ -8,7 +8,6 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import SmartphoneIcon from '@material-ui/icons/Smartphone';
 import EmailIcon from '@material-ui/icons/Email';
 
-
 const useStyles = makeStyles(theme => ({
   root: {},
   cardHeader: {
@@ -54,7 +53,7 @@ const UserCard = props => {
         
         <CardHeader
           className={classes.cardHeader}
-          avatar={<Avatar className={classes.large} alt={user.name} src={user.avatarUrl} />}
+          avatar={<Avatar className={classes.large} alt={user.name} src={user.avatarUrl}/>}
         />
         <CardHeader 
           className={classes.cardHeader}

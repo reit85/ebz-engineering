@@ -3,7 +3,7 @@
   "author": "Alexander Reit",
   "email": "alexander.reit@ebz-group.com",
   "licence": "MIT",
-  "version": "0.3.0",
+  "version": "0.0.1",
   "private": false,
   "scripts": {
     "start": "react-scripts start",

@@ -1,6 +1,5 @@
 import uuid from 'uuid'
 
-
 export default [
   {
     id: uuid(),

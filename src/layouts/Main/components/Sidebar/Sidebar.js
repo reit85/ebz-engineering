@@ -48,7 +48,7 @@ const Sidebar = props => {
     },
     {
       title: 'Projekte',
-      href: '/settings',
+      href: '/projects',
       icon: <AccountTreeIcon />
     },
     {
